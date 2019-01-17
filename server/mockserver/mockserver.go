@@ -144,6 +144,7 @@ func (h *Handler) InstallHandlers(s *server.Server) {
 	s.Handle("usergroups.update", http.HandlerFunc(h.HandleUsergroupsUpdate))
 	s.Handle("usergroups.users.list", http.HandlerFunc(h.HandleUsergroupsUsersList))
 	s.Handle("usergroups.users.update", http.HandlerFunc(h.HandleUsergroupsUsersUpdate))
+	s.Handle("users.admin.setInactive", http.HandlerFunc(h.HandleUsersAdminSetInactive))
 	s.Handle("users.deletePhoto", http.HandlerFunc(h.HandleUsersDeletePhoto))
 	s.Handle("users.getPresence", http.HandlerFunc(h.HandleUsersGetPresence))
 	s.Handle("users.identity", http.HandlerFunc(h.HandleUsersIdentity))
@@ -1669,6 +1670,31 @@ func (h *Handler) HandleUsergroupsUsersUpdate(w http.ResponseWriter, r *http.Req
 	}
 	var buf bytes.Buffer
 	if err := json.NewEncoder(&buf).Encode(StockResponse("usergroups.users.update")); err != nil {
+		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
+		return
+	}
+	w.Header().Set(`Content-Type`, `application/json; charset=utf-8`)
+	w.WriteHeader(http.StatusOK)
+	buf.WriteTo(w)
+}
+
+// HandleUsersAdminSetInactive is the default handler method for the Slack users.admin.setInactive API
+func (h *Handler) HandleUsersAdminSetInactive(w http.ResponseWriter, r *http.Request) {
+	if err := r.ParseForm(); err != nil {
+		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+		return
+	}
+	if !h.validateToken(r) {
+		http.Error(w, http.StatusText(http.StatusForbidden), http.StatusForbidden)
+		return
+	}
+	var c slack.UsersAdminSetInactiveCall
+	if err := c.FromValues(r.Form); err != nil {
+		http.Error(w, http.StatusText(http.StatusBadRequest), http.StatusBadRequest)
+		return
+	}
+	var buf bytes.Buffer
+	if err := json.NewEncoder(&buf).Encode(StockResponse("users.admin.setInactive")); err != nil {
 		http.Error(w, http.StatusText(http.StatusInternalServerError), http.StatusInternalServerError)
 		return
 	}

@@ -101,6 +101,7 @@ func (h *Handler) InstallHandlers(s *server.Server) {
 	s.Handle("usergroups.update", http.HandlerFunc(h.mock.HandleUsergroupsUpdate))
 	s.Handle("usergroups.users.list", http.HandlerFunc(h.ProxyHandler))
 	s.Handle("usergroups.users.update", http.HandlerFunc(h.mock.HandleUsergroupsUsersUpdate))
+	s.Handle("users.admin.setInactive", http.HandlerFunc(h.mock.HandleUsersAdminSetInactive))
 	s.Handle("users.deletePhoto", http.HandlerFunc(h.mock.HandleUsersDeletePhoto))
 	s.Handle("users.getPresence", http.HandlerFunc(h.mock.HandleUsersGetPresence))
 	s.Handle("users.identity", http.HandlerFunc(h.ProxyHandler))

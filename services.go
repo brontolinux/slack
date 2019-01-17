@@ -86,6 +86,12 @@ type UsersService struct {
 	token  string
 }
 
+// UsersAdminService handles UsersAdmin related endpoints
+type UsersAdminService struct {
+	client *httpClient
+	token  string
+}
+
 // UsersProfileService handles UsersProfile related endpoints
 type UsersProfileService struct {
 	client *httpClient

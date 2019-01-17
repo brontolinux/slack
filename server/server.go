@@ -84,6 +84,7 @@ func New(options ...Option) *Server {
 			"usergroups.update":       http.HandlerFunc(unimplemented),
 			"usergroups.users.list":   http.HandlerFunc(unimplemented),
 			"usergroups.users.update": http.HandlerFunc(unimplemented),
+			"users.admin.setInactive": http.HandlerFunc(unimplemented),
 			"users.deletePhoto":       http.HandlerFunc(unimplemented),
 			"users.getPresence":       http.HandlerFunc(unimplemented),
 			"users.identity":          http.HandlerFunc(unimplemented),

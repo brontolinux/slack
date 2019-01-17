@@ -999,6 +999,16 @@
     "return": "objects.RTMResponse",
     "group": "RTM"
   },
+    {
+        "name": "users.admin.setInactive",
+        "args": [
+            {
+                "name": "user",
+                "type": "string",
+                "required": true
+            }
+        ]
+    },
   {
     "name": "users.deletePhoto"
   },
