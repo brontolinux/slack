@@ -4,8 +4,8 @@ import (
 	"time"
 
 	"github.com/cenkalti/backoff"
-	"github.com/lestrrat-go/slack"
-	"github.com/lestrrat-go/slack/objects"
+	"github.com/brontolinux/slack"
+	"github.com/brontolinux/slack/objects"
 )
 
 type EventType int

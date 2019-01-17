@@ -4,8 +4,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/lestrrat-go/slack"
-	"github.com/lestrrat-go/slack/objects"
+	"github.com/brontolinux/slack"
+	"github.com/brontolinux/slack/objects"
 	"github.com/stretchr/testify/assert"
 )
 

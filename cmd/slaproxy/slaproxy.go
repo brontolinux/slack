@@ -8,8 +8,8 @@ import (
 	"os"
 
 	apachelog "github.com/lestrrat-go/apache-logformat"
-	"github.com/lestrrat-go/slack/server"
-	"github.com/lestrrat-go/slack/server/proxyserver"
+	"github.com/brontolinux/slack/server"
+	"github.com/brontolinux/slack/server/proxyserver"
 )
 
 func main() {

@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/lestrrat-go/slack/rtm"
-	"github.com/lestrrat-go/slack"
+	"github.com/brontolinux/slack/rtm"
+	"github.com/brontolinux/slack"
 )
 
 func processMessageEvent(e *rtm.MessageEvent) {

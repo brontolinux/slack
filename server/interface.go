@@ -4,7 +4,7 @@ import (
 	"net/http"
 	"sync"
 
-	"github.com/lestrrat-go/slack/internal/option"
+	"github.com/brontolinux/slack/internal/option"
 )
 
 const (
