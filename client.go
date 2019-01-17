@@ -76,6 +76,7 @@ func New(token string, options ...Option) *Client {
 		reactions:       &ReactionsService{client: wrappedcl, token: token},
 		rtm:             &RTMService{client: wrappedcl, token: token},
 		users:           &UsersService{client: wrappedcl, token: token},
+		usersAdmin:      &UsersAdminService{client: wrappedcl, token: token},
 		usersProfile:    &UsersProfileService{client: wrappedcl, token: token},
 		usergroups:      &UsergroupsService{client: wrappedcl, token: token},
 		usergroupsUsers: &UsergroupsUsersService{client: wrappedcl, token: token},
@@ -141,6 +142,11 @@ func (c *Client) RTM() *RTMService {
 // Users returns the Service object for `users.*` endpoints
 func (c *Client) Users() *UsersService {
 	return c.users
+}
+
+// UsersAdmin returns the Service object for `users.admin.*` endpoints
+func (c *Client) UsersAdmin() *UsersAdminService {
+	return c.usersAdmin
 }
 
 // UsersProfile returns the Service object for `users.profile.*` endpoints

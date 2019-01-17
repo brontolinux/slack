@@ -68,6 +68,7 @@ type Client struct {
 	reminders       *RemindersService
 	rtm             *RTMService
 	users           *UsersService
+	usersAdmin      *UsersAdminService
 	usersProfile    *UsersProfileService
 	usergroups      *UsergroupsService
 	usergroupsUsers *UsergroupsUsersService
