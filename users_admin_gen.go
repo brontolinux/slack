@@ -8,7 +8,7 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/lestrrat-go/slack/objects"
+	"github.com/brontolinux/slack/objects"
 	"github.com/pkg/errors"
 )
 

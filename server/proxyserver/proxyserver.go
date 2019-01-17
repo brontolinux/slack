@@ -6,9 +6,9 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/lestrrat-go/slack"
-	"github.com/lestrrat-go/slack/server"
-	"github.com/lestrrat-go/slack/server/mockserver"
+	"github.com/brontolinux/slack"
+	"github.com/brontolinux/slack/server"
+	"github.com/brontolinux/slack/server/mockserver"
 )
 
 type Handler struct {
